@@ -1141,3 +1141,13 @@ h1, h2, h3, h4, h5, h6, p, li, a {
     text-shadow: 2px 2px 4px #000000;
 }
 /* --- 여기까지 --- */
+/* 제목과 부제목을 강제로 가운데 정렬 */
+.intro-header .site-heading, .intro-header .page-heading {
+    text-align: center !important;
+}
+
+/* 본문 내용도 가운데 정렬을 원하면 아래 주석을 푸세요 */
+/* body {
+    text-align: center;
+} 
+*/
