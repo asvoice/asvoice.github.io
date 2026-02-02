@@ -1,26 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <title>Eging Again</title>
 
-  <meta name="author" content="Amy Troschinetz">
-  <meta name="description" content="The Discord bot for Webcam Magic">
-  <meta name="theme-color" content="#5A3EFD">
-  <meta name="keywords" content="magic: the gathering, magic, mtg, edh, commander, spelltable, discord bot, discord, bot">
-
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
-
-  <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
   <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
   <link rel="stylesheet" href="/assets/css/spellbot.css">
 
-  <meta property="og:site_name" content="Eging Again">
-  <meta property="og:title" content="Eging Again">
-  <meta property="og:description" content="The Discord bot for Webcam Magic">
-  <meta property="og:image" content="https://spellbot.io/assets/img/avatar-icon.png">
+  <style>
+    /* 아바타 중앙 정렬 및 회전 방지 강제 설정 */
+    .avatar-container {
+      position: absolute !important;
+      left: 50% !important;
+      width: 60px !important;
+      height: 60px !important;
+      margin-left: -30px !important;
+      bottom: -30px !important;
+      z-index: 1001 !important;
+    }
+    .avatar-img-border {
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 50% !important;
+      overflow: hidden !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .avatar-img {
+      animation: none !important;
+      -webkit-animation: none !important;
+      transform: none !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
+    <a class="navbar-brand" href="/">Eging Again</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://spelltable.wizards.com/">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.patreon.com/lexicalunit">Patreon</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/lexicalunit/spellbot">Dev</a></li>
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="/">
+          <img alt="Avatar" class="avatar-img" src="/assets/img/avatar-icon.png">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header-section">
+    <div class="intro-header">
+      <div class="container-md">
+        <div class="row">
+          <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+            <div class="page-heading" style="text-align: center; margin-top: 100px;">
+              <h1 style="font-size: clamp(1.8rem, 6vw, 3.5rem); white-space: nowrap;">What do you do for fun?</h1>
+              <hr class="small">
+              <span class="page-subheading">I write about <span id="typed"></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div style="text-align: center; margin: 40px 0;">
+          <button type="button" onclick="location.href='https://open.kakao.com/o/YOUR_ID';"
+            style="background-color: #FEE500; color: #191919; border: none; padding: 12px 24px; font-weight: bold; border-radius: 8px; cursor: pointer;">
+            CHAT ME
+          </button>
+        </div>
+        <section style="text-align: center;">
+          <p>낚시, 보안(CTF), 그리고 일상의 기록을 담는 블로그입니다.</p>
+          <img src="
