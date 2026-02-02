@@ -194,3 +194,19 @@ code {
 .social-icon {
   color: white;
 }
+#typed {
+  color: #e60012;
+  font-weight: 600;
+}
+
+.typed-cursor {
+  color: #e60012;
+  font-weight: 400;
+  animation: typedBlink 0.7s infinite;
+}
+
+@keyframes typedBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
