@@ -1,41 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>SpellBot</title>
 
-  <!-- CSS 링크 -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+  <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
   <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
   <link rel="stylesheet" href="/assets/css/spellbot.css">
 
-  <!-- Typed.js CSS 스타일 -->
+  <!-- 무지개 그라데이션 CSS -->
   <style>
     #typed {
-      color: #e60012; /* 빨간색 */
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 2rem;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400% 100%;
+      animation: rainbowShift 5s linear infinite;
     }
+
     .typed-cursor {
-      color: #e60012;
+      color: #000;
       font-weight: 400;
       animation: typedBlink 0.7s infinite;
     }
+
     @keyframes typedBlink {
       0% { opacity: 1; }
       50% { opacity: 0; }
       100% { opacity: 1; }
     }
+
+    @keyframes rainbowShift {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 0%; }
+    }
   </style>
 </head>
 
 <body>
+
   <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
     <a class="navbar-brand" href="https://spellbot.io/">SpellBot</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link" href="https://asvoice.github.io/">Home</a></li>
@@ -45,6 +63,7 @@
         <li class="nav-item"><a class="nav-link" href="https://prod.app.spellbot.io/status">Status</a></li>
       </ul>
     </div>
+
     <div class="avatar-container">
       <div class="avatar-img-border">
         <a href="https://asvoice.github.io/">
@@ -60,14 +79,9 @@
         <div class="row">
           <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
             <div class="page-heading">
-              <h1>Eging . Agagin</h1>
+              <h1>I write about <span id="typed"></span></h1>
               <hr class="small">
-              <!-- 여기에서 타이핑 글자 적용 -->
-              <span class="page-subheading">
-                fishing & Computer
-                <br>
-                I write about <span id="typed"></span>
-              </span>
+              <span class="page-subheading">fishing & Computer</span>
             </div>
           </div>
         </div>
@@ -78,7 +92,7 @@
   <main class="container-md">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <!-- 기존 컨텐츠 그대로 유지 -->
+        <!-- 기존 콘텐츠 유지 -->
       </div>
     </div>
   </main>
@@ -87,30 +101,61 @@
     <div class="container-md beautiful-jekyll-footer">
       <div class="row">
         <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-          <p class="copyright text-muted">Amy Troschinetz &bull; 2026 &bull; <a href="https://spellbot.io/">SpellBot.io</a></p>
+          <ul class="list-inline text-center footer-links">
+            <li class="list-inline-item">
+              <a href="mailto:spellbot@lexicalunit.com" title="Email me">
+                <span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-envelope social-icon fa-stack-1x"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/lexicalunit" title="GitHub">
+                <span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github social-icon fa-stack-1x"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://bsky.app/profile/spellbot.io" title="BlueSky">
+                <span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-bluesky social-icon fa-stack-1x"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <p class="copyright text-muted">
+            Amy Troschinetz &nbsp;&bull;&nbsp; 2026 &nbsp;&bull;&nbsp;
+            <span class="author-site"><a href="https://spellbot.io/">SpellBot.io</a></span>
+          </p>
           <p class="theme-by text-muted">Powered by <a href="https://beautifuljekyll.com">Beautiful Jekyll</a></p>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- JS 링크 -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="/assets/js/beautifuljekyll.js"></script>
   <script src="/assets/js/spellbot.js"></script>
 
-  <!-- Typed.js 적용 -->
+  <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
-    var typed = new Typed("#typed", {
-      strings: ["Fishing", "Diary", "CTF.."], // 바꾸고 싶은 글자
-      typeSpeed: 60,
-      backSpeed: 40,
-      backDelay: 1400,
+    new Typed("#typed", {
+      strings: ["Pwnable", "Reverse Engineering", "Web Exploit"],
+      typeSpeed: 120,
+      backSpeed: 60,
+      backDelay: 1500,
       loop: true
     });
   </script>
+
 </body>
 </html>
