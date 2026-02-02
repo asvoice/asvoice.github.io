@@ -21,67 +21,28 @@
 }
 
 /* --- General --- */
-
-html {
-  font-size: 100%
-}
-
+html { font-size: 100% }
 body {
   font-family: var(--body-font);
   font-size: 1.125rem;
   color: var(--text-col);
   position: relative;
   background-color: var(--page-col);
-  
   overflow-wrap: break-word;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-body > main {
-  flex: 1;
-}
-p {
-  line-height: 1.5;
-  margin: 1.875rem 0;
-}
+body > main { flex: 1; }
+p { line-height: 1.5; margin: 1.875rem 0; }
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--header-font);
   font-weight: 800;
   line-height: 1.1;
 }
-h1 {
-  font-size: 2.25rem;
-}
-h2 {
-  font-size: 1.875rem;
-}
-h3 {
-  font-size: 1.5rem;
-}
-h4 {
-  font-size: 1.125rem;
-}
-h1, h2, h3, h4 {
-  margin-top: 1.25rem;
-}
-a {
-  color: var(--link-col);
-}
-a:hover,
-a:focus {
-  color: var(--hover-col);
-}
-blockquote {
-  color: var(--mid-col);
-  font-style: italic;
-}
-blockquote p:first-child {
-  margin-top: 0;
-}
-.jumbotron {
-  background: #EEE;
-}
+h1 { font-size: 2.25rem; }
+a { color: var(--link-col); }
+a:hover, a:focus { color: var(--hover-col); }
 hr.small {
   max-width: 6.25rem;
   margin: 1rem auto;
@@ -90,158 +51,22 @@ hr.small {
   border-radius: 0.1875rem;
 }
 
-/* fix in-page anchors to not be behind fixed header */
-:target:before {
-  content: "";
-  display: block;
-  height: 3.125rem; /* navbar height */
-  margin: -3.125rem 0 0;
-}
-
-.hideme {
-  display: none;
-}
-
-::-moz-selection {
-  color: var(--page-col);
-  background-color: var(--hover-col);
-  text-shadow: none;
-}
-::selection {
-  color: var(--page-col);
-  background-color: var(--hover-col);
-  text-shadow: none;
-}
-img::selection {
-  color: var(--hover-col);
-  background: transparent;
-}
-img::-moz-selection {
-  color: var(--hover-col);
-  background: transparent;
-}
-
-img {
-  max-width: 100%;
-}
-
-.linked-section {
-  padding-top: 3.75rem;
-  margin-top: -1.5625rem;
-}
-
 /* --- Navbar --- */
-
 .navbar-custom {
   background-color: var(--navbar-col);
   border-bottom: 1px solid var(--navbar-border-col);
   font-family: var(--header-font);
-  
-  -webkit-transition: padding .5s ease-in-out;
-  -moz-transition: padding .5s ease-in-out;
   transition: padding .5s ease-in-out;
 }
-
-.navbar-custom,
-.navbar-custom.top-nav-short,
-.navbar-custom.top-nav-short-permanent {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 .navbar-custom .navbar-brand {
-  line-height: 1.5;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  font-size: 1.125rem;
-}
-
-.navbar-custom .navbar-brand-logo {
-  -webkit-transition: padding .5s ease-in-out;
-  -moz-transition: padding .5s ease-in-out;
-  transition: padding .5s ease-in-out;
-}
-
-.navbar-custom .navbar-brand-logo,
-.navbar-custom.top-nav-short .navbar-brand-logo,
-.navbar-custom.top-nav-short-permanent .navbar-brand-logo {
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-}
-
-.navbar-custom .navbar-brand-logo img {
-  -webkit-transition: height .5s ease-in-out;
-  -moz-transition: height .5s ease-in-out;
-  transition: height .5s ease-in-out;
-}
-
-.navbar-custom .navbar-brand-logo img,
-.navbar-custom.top-nav-short .navbar-brand-logo img,
-.navbar-custom.top-nav-short-permanent .navbar-brand-logo img {
-  height: 2.5rem;
-}
-
-.navbar-custom .navbar-nav .nav-item {
-  text-transform: uppercase;
-  font-size: 0.8125rem;
-  letter-spacing: 0.0625rem;
-}
-
-.navbar-custom .navbar-nav .nav-link {
-  line-height: 1.25rem;
-  padding-top: 0.9375rem;
-  padding-bottom: 0.9375rem;
-}
-
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-nav .nav-link {
   font-weight: 800;
   color: var(--navbar-text-col);
 }
-
-.navbar-toggler {
-  font-size: 1rem;
-  margin: 0.5rem 0;
+.navbar-custom .navbar-nav .nav-link {
+  font-weight: 800;
+  color: var(--navbar-text-col);
+  text-transform: uppercase;
+  font-size: 0.8125rem;
 }
 
-.navbar-custom .avatar-container {
-  position: absolute;
-  left: 50%;
-  width: 3.125rem;
-  bottom: -1.5rem;
-  transition: opacity 0.5s ease-in-out;
-}
-
-/* 🟢 아바타 회전 금지 및 스타일 고정 */
-.navbar-custom .avatar-container .avatar-img {
-  width: 100%;
-  border-radius: 50%;
-  display: block;
-  animation: none !important;      /* 회전 애니메이션 제거 */
-  -webkit-animation: none !important;
-  transform: none !important;
-}
-
-/* --- Footer --- */
-
-footer {
-  padding: 1.875rem 0;
-  border-top: 1px var(--footer-col) solid;
-  margin-top: 3.125rem;
-  font-size: 0.875rem;
-  background-color: var(--footer-col);
-}
-
-footer p.text-muted {
-  color: var(--footer-text-col) !important;
-}
-
-/* --- Post and page headers --- */
-
-.intro-header {
-  margin: 5rem 0 1.25rem;
-  position: relative;
-}
-
-.intro-header .page-heading {
-  text-align: center;
+/* 🛑 아바타 회전 절대
