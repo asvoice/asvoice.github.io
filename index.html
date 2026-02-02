@@ -55,11 +55,11 @@
       </ul>
     </div>
 
-    <div class="avatar-container">
-      <div class="avatar-img-border">
+    <div class="avatar-container" style="width: 60px !important; height: 60px !important; left: 50% !important; transform: translateX(-50%) !important; bottom: -30px !important; position: absolute !important; z-index: 101;">
+      <div class="avatar-img-border" style="width: 100% !important; height: 100% !important; border-radius: 50% !important; overflow: hidden !important; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
         <a href="https://asvoice.github.io/">
           <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/avatar-icon.png" 
-               style="animation: none !important; -webkit-animation: none !important; transform: none !important; width: 100% !important; height: auto !important; display: block;" />
+               style="animation: none !important; -webkit-animation: none !important; transform: none !important; width: 100% !important; height: 100% !important; object-fit: cover; display: block;" />
         </a>
       </div>
     </div>
@@ -71,7 +71,7 @@
         <div class="row">
           <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
             <div class="page-heading">
-              <h1 style="font-size: clamp(2rem, 7vw, 3.5rem); white-space: nowrap;">What do you do for fun?</h1>
+              <h1 style="font-size: clamp(1.8rem, 6vw, 3.5rem); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">What do you do for fun?</h1>
               <hr class="small">
               <span class="page-subheading">
                 I write about <span id="typed"></span>
@@ -86,28 +86,29 @@
   <main class=" container-md ">
     <div class="row">
       <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
-        <div class="add-to-discord">
-          <div class="hero">
+        <div class="add-to-discord" style="text-align: center; margin-bottom: 40px;">
+          <div class="hero" style="margin-bottom: 20px;">
             <button type="button" class="add-bot"
               onclick="location.href='https://open.kakao.com/o/YOUR_ID';"
-              style="background-color: #FEE500; color: #191919; border: none; padding: 10px 20px; font-weight: bold; border-radius: 5px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-              CHAT ME
+              style="background-color: #FEE500; color: #191919; border: none; padding: 12px 24px; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 1.1rem;">
+              <i class="fas fa-comment" style="margin-right: 8px;"></i> CHAT ME
             </button>
           </div>
           <div class="hero">
-            <a class="patreon" rel="noopener noreferrer" href="https://www.patreon.com/lexicalunit" role="button" target="_blank">
-              <svg width="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.82 2.398c-3.97 0-7.2 3.234-7.2 7.208 0 3.963 3.23 7.187 7.2 7.187 3.959 0 7.18-3.224 7.18-7.187 0-3.974-3.221-7.208-7.18-7.208zM2 21.598h3.516v-19.2H2v19.2z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>&nbsp;Become&nbsp;a&nbsp;patron
+            <a class="patreon" rel="noopener noreferrer" href="https://www.patreon.com/lexicalunit" role="button" target="_blank" style="text-decoration: none; color: #f96854; font-weight: bold;">
+              <i class="fab fa-patreon" style="margin-right: 5px;"></i> Become a patron
             </a>
           </div>
         </div>
 
         <section id="getting-started" class="level2">
-          <p>
-            <span style="font-size: 1.25rem">Eging Again</span>은 낚시, CTF, 그리고 게임에 관한 이야기를 기록하는 공간입니다.
+          <p style="text-align: center; font-size: 1.15rem;">
+            <span style="font-weight: bold; color: #ffb342;">Eging Again</span>은 낚시, 보안(CTF), 그리고 일상의 기록을 담는 블로그입니다.
           </p>
-          <img class="screenshot" src="https://github.com/lexicalunit/spellbot/assets/1903876/39381709-8dfd-473e-8072-e7267c50b4ad" width="600" alt="Intro" />
+          <div style="text-align: center;">
+            <img class="screenshot" src="https://github.com/lexicalunit/spellbot/assets/1903876/39381709-8dfd-473e-8072-e7267c50b4ad" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" alt="Intro" />
+          </div>
         </section>
-
       </div>
     </div>
   </main>
@@ -123,7 +124,6 @@
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fas fa-envelope social-icon fa-stack-1x"></i>
                 </span>
-                <span class="sr-only">Email me</span>
               </a>
             </li>
             <li class="list-inline-item">
@@ -132,16 +132,12 @@
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-github social-icon fa-stack-1x"></i>
                 </span>
-                <span class="sr-only">GitHub</span>
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">
+          <p class="copyright text-muted" style="text-align: center;">
             DaegU aGain &nbsp;&bull;&nbsp; 2026 &nbsp;&bull;&nbsp;
             <span class="author-site"><a href="https://asvoice.github.io/">asvoice.io</a></span>
-          </p>
-          <p class="theme-by text-muted">
-            Theme by <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
           </p>
         </div>
       </div>
