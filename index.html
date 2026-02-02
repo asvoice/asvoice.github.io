@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/assets/css/spellbot.css">
 
   <style>
-    /* 아바타 중앙 정렬 및 회전 방지 강제 설정 */
+    /* 1. 아바타 중앙 고정 및 회전 방지 */
     .avatar-container {
       position: absolute !important;
       left: 50% !important;
@@ -20,6 +20,8 @@
       margin-left: -30px !important;
       bottom: -30px !important;
       z-index: 1001 !important;
+      display: block !important;
+      opacity: 1 !important;
     }
     .avatar-img-border {
       width: 100% !important;
@@ -36,6 +38,20 @@
       height: 100% !important;
       object-fit: cover;
       display: block;
+    }
+
+    /* 2. 빨간색 타이핑 글씨 설정 */
+    #typed {
+      color: #ff4d4d; /* 빨간색 고정 */
+      font-weight: bold;
+    }
+    .typed-cursor {
+      color: #ff4d4d;
+    }
+
+    /* 3. 헤더 여백 확보 (내용이 겹쳐 보이지 않게) */
+    .intro-header {
+      padding: 150px 0 100px !important;
     }
   </style>
 </head>
@@ -70,10 +86,12 @@
       <div class="container-md">
         <div class="row">
           <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-            <div class="page-heading" style="text-align: center; margin-top: 100px;">
-              <h1 style="font-size: clamp(1.8rem, 6vw, 3.5rem); white-space: nowrap;">What do you do for fun?</h1>
+            <div class="page-heading" style="text-align: center;">
+              <h1 style="font-size: clamp(1.8rem, 6vw, 3.5rem); white-space: nowrap; margin-bottom: 20px;">What do you do for fun?</h1>
               <hr class="small">
-              <span class="page-subheading">I write about <span id="typed"></span></span>
+              <span class="page-subheading" style="font-size: 1.5rem;">
+                I write about <span id="typed"></span>
+              </span>
             </div>
           </div>
         </div>
@@ -81,15 +99,53 @@
     </div>
   </header>
 
-  <main class="container-md">
+  <main class="container-md" style="margin-top: 50px; min-height: 400px;">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div style="text-align: center; margin: 40px 0;">
+        
+        <div style="text-align: center; margin-bottom: 50px;">
           <button type="button" onclick="location.href='https://open.kakao.com/o/YOUR_ID';"
-            style="background-color: #FEE500; color: #191919; border: none; padding: 12px 24px; font-weight: bold; border-radius: 8px; cursor: pointer;">
-            CHAT ME
+            style="background-color: #FEE500; color: #191919; border: none; padding: 15px 30px; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 1.2rem;">
+            <i class="fas fa-comment"></i> CHAT ME
           </button>
         </div>
-        <section style="text-align: center;">
-          <p>낚시, 보안(CTF), 그리고 일상의 기록을 담는 블로그입니다.</p>
-          <img src="
+
+        <article style="text-align: center; color: white; line-height: 1.8;">
+          <p style="font-size: 1.2rem;">낚시, 보안(CTF), 그리고 일상의 기록을 담는 블로그입니다.</p>
+          <div style="margin-top: 30px;">
+             <img src="https://github.com/lexicalunit/spellbot/assets/1903876/39381709-8dfd-473e-8072-e7267c50b4ad" 
+                  style="max-width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" alt="Main Image">
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <footer style="margin-top: 100px; padding: 50px 0; border-top: 1px solid #333; text-align: center;">
+    <div class="container-md">
+      <p class="text-muted">DaegU aGain &bull; 2026 &bull; <a href="/">asvoice.io</a></p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Typed("#typed", {
+        strings: ["Fishing.", "CTF.", "Teamfight Tactics.", "Study."],
+        typeSpeed: 70,
+        backSpeed: 40,
+        backDelay: 1500,
+        startDelay: 500,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|"
+      });
+    });
+  </script>
+</body>
+</html>
