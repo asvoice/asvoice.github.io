@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
-  
+
   <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
   <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
   <link rel="stylesheet" href="/assets/css/spellbot.css">
@@ -40,10 +40,9 @@
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
     <a class="navbar-brand" href="https://spellbot.io/">Eging Again</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -66,13 +65,13 @@
     </div>
   </nav>
 
-  <header class="header-section">
-    <div class="intro-header">
+  <header class="header-section ">
+    <div class="intro-header ">
       <div class="container-md">
         <div class="row">
           <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
             <div class="page-heading">
-              <h1>Eging . Agagin</h1>
+              <h1>Eging Again</h1>
               <hr class="small">
               <span class="page-subheading">
                 I write about <span id="typed"></span>
@@ -84,28 +83,44 @@
     </div>
   </header>
 
-  <main class="container-md">
+  <main class=" container-md ">
     <div class="row">
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
         <div class="add-to-discord">
           <div class="hero">
-            <button type="button" class="add-bot" onclick="location.href='https://discordapp.com/api/oauth2/authorize?client_id=725510263251402832&permissions=2416045137&scope=applications.commands%20bot';">
-              <img src="/assets/img/discord-logo.svg" alt="add-bot" style="margin-inline-end: 15px;">
-              Add to Discord
+            <button type="button" class="add-bot"
+              onclick="location.href='https://discordapp.com/api/oauth2/authorize?client_id=725510263251402832&permissions=2416045137&scope=applications.commands%20bot';"
+              style="background-color: #FFD700; color: black; border: none; padding: 10px 20px; font-weight: bold; border-radius: 5px;">
+              <img src="/assets/img/discord-logo.svg" alt="chat-me" style="margin-inline-end: 15px;">
+              CHAT ME
             </button>
           </div>
           <div class="hero">
             <a class="patreon" rel="noopener noreferrer" href="https://www.patreon.com/bePatron?u=5973611" role="button" target="_blank">
               <svg width="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.82 2.398c-3.97 0-7.2 3.234-7.2 7.208 0 3.963 3.23 7.187 7.2 7.187 3.959 0 7.18-3.224 7.18-7.187 0-3.974-3.221-7.208-7.18-7.208zM2 21.598h3.516v-19.2H2v19.2z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>&nbsp;Become&nbsp;a&nbsp;patron
             </a>
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+              kofiWidgetOverlay.draw('lexicalunit', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Tip me',
+                'floating-chat.donateButton.background-color': '#fcbf47',
+                'floating-chat.donateButton.text-color': '#323842'
+              });
+            </script>
           </div>
         </div>
 
+        <!-- 이하 기존 콘텐츠는 그대로 유지 -->
         <section id="getting-started" class="level2">
           <p>
-            <span style="font-size: 1.25rem">Eging Again</span> helps you find <em>Magic: The Gathering</em> games on <a href="https://convoke.games/">Convoke</a>, <a href="https://spelltable.wizards.com/">SpellTable</a>, <a href="https://www.girudo.com/">Girudo</a>, and <a href="https://table-stream.com/">Table Stream</a>. Just looking to play a game of Commander? Run the command <code>/lfg</code> and Eging Again will help you out!
+            <span style="font-size: 1.25rem">SpellBot</span> helps you find <em>Magic: The Gathering</em> games on <a href="https://convoke.games/">Convoke</a>, <a href="https://spelltable.wizards.com/">SpellTable</a>, <a href="https://www.girudo.com/">Girudo</a>, and <a href="https://table-stream.com/">Table Stream</a>. Just looking to play a game of Commander? Run the command <code>/lfg</code> and SpellBot will help you out!
           </p>
+          <img class="screenshot" src="https://github.com/lexicalunit/spellbot/assets/1903876/39381709-8dfd-473e-8072-e7267c50b4ad" width="600" alt="/lfg" />
         </section>
+
+        <!-- 이하 나머지 섹션 그대로 유지 -->
+
       </div>
     </div>
   </main>
@@ -114,11 +129,38 @@
     <div class="container-md beautiful-jekyll-footer">
       <div class="row">
         <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+          <ul class="list-inline text-center footer-links">
+            <li class="list-inline-item">
+              <a href="mailto:spellbot@lexicalunit.com" title="Email me">
+                <span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-envelope social-icon fa-stack-1x"></i>
+                </span>
+                <span class="sr-only">Email me</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/lexicalunit" title="GitHub">
+                <span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github social-icon fa-stack-1x"></i>
+                </span>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://bsky.app/profile/spellbot.io" title="BlueSky">
+                <span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-bluesky social-icon fa-stack-1x"></i>
+                </span>
+                <span class="sr-only">BlueSky</span>
+              </a>
+            </li>
+          </ul>
           <p class="copyright text-muted">
             Amy Troschinetz &nbsp;&bull;&nbsp; 2026 &nbsp;&bull;&nbsp;
-            <span class="author-site">
-              <a href="https://spellbot.io/">Eging Again</a>
-            </span>
+            <span class="author-site"><a href="https://spellbot.io/">SpellBot.io</a></span>
           </p>
           <p class="theme-by text-muted">
             Powered by <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
@@ -149,6 +191,5 @@
       });
     });
   </script>
-
 </body>
 </html>
