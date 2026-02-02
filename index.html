@@ -3,22 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <title>Eging Again</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="author" content="Amy Troschinetz">
+  <meta name="description" content="The Discord bot for Webcam Magic">
+  <meta name="theme-color" content="#5A3EFD">
+  <meta name="keywords" content="magic: the gathering, magic, mtg, edh, commander, spelltable, discord bot, discord, bot">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+  <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
   <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
   <link rel="stylesheet" href="/assets/css/spellbot.css">
+
   <style>
-    /* 1. 로고 완벽 중앙 정렬 및 크기 최적화 */
+    /* 1. 로고(아바타) 원본 크기 복구 및 정중앙 배치 */
     .avatar-container {
       position: absolute !important;
       left: 50% !important;
-      bottom: 0 !important; /* 내비게이션 바 하단 경계선에 맞춤 */
-      width: 100px !important;
+      bottom: 0 !important;
+      width: 100px !important;  /* 원본 사이즈 */
       height: 100px !important;
-      margin-left: -50px !important; /* 너비의 절반만큼 왼쪽으로 이동 */
-      margin-bottom: -50px !important; /* 높이의 절반만큼 아래로 내려서 걸치게 함 */
-      z-index: 1001 !important;
+      margin-left: -50px !important; /* 가로 중앙 */
+      margin-bottom: -50px !important; /* 세로 중앙 걸치기 */
+      z-index: 101 !important;
     }
     .avatar-img-border {
       width: 100% !important;
@@ -26,39 +37,110 @@
       border-radius: 50% !important;
       overflow: hidden !important;
       box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      border: 3px solid #1a202c; /* 배경색과 맞춘 테두리로 깔끔하게 */
     }
     .avatar-img {
-      animation: none !important; 
-      -webkit-animation: none !important; 
+      /* 회전 애니메이션 완전 제거 */
+      animation: none !important;
+      -webkit-animation: none !important;
       transform: none !important;
-      width: 100% !important; 
-      height: 100% !important; 
-      object-fit: cover; 
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
       display: block;
     }
 
-    /* 2. 메인 타이틀 위치 상단으로 이동 */
+    /* 2. 타이틀 위치를 위로 조정 */
     .intro-header {
-      padding: 100px 0 60px !important; /* 기존 160px에서 100px로 줄여 위로 올림 */
-    }
-    .page-heading {
-      margin-top: 20px; /* 로고와 겹치지 않게 미세 조정 */
+      padding: 100px 0 60px !important; /* 상단 여백을 줄여 위로 올림 */
     }
 
-    /* 3. 디자인 디테일 */
-    #typed { color: #ff4d4d; font-weight: bold; }
-    body { background-color: #1a202c; color: white; }
-    .navbar-custom { background-color: #0d1117; border-bottom: 1px solid #1a202c; }
+    /* 3. 빨간색 타이핑 텍스트 스타일 */
+    #typed {
+      color: #ff4d4d;
+      font-weight: bold;
+    }
   </style>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
     <a class="navbar-brand" href="/">Eging Again</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav
+        <li class="nav-item"><a class="nav-link" href="https://spelltable.wizards.com/">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.patreon.com/lexicalunit">Patreon</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/lexicalunit/spellbot">Dev</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://prod.app.spellbot.io/status">Status</a></li>
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/avatar-icon.png" />
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header-section">
+    <div class="intro-header">
+      <div class="container-md">
+        <div class="row">
+          <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+            <div class="page-heading" style="text-align: center;">
+              <h1 style="font-size: clamp(2rem, 7vw, 4rem); white-space: nowrap;">What do you do for fun?</h1>
+              <hr class="small">
+              <span class="page-subheading" style="font-size: 1.5rem;">
+                I write about <span id="typed"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+          <button type="button" onclick="location.href='https://open.kakao.com/o/YOUR_ID';"
+            style="background-color: #FEE500; color: #191919; border: none; padding: 15px 30px; font-weight: bold; border-radius: 8px; cursor: pointer;">
+            CHAT ME
+          </button>
+        </div>
+
+        <section id="getting-started" class="level2" style="text-align: center;">
+          <p style="font-size: 1.25rem">
+            낚시, 보안(CTF), 그리고 일상의 기록을 담는 블로그입니다.
+          </p>
+          <img class="screenshot" src="https://github.com/lexicalunit/spellbot/assets/1903876/39381709-8dfd-473e-8072-e7267c50b4ad" width="600" alt="Intro" style="border-radius: 15px; margin-top: 20px;" />
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container-md beautiful-jekyll-footer">
+      <div class="row">
+        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+          <ul class="list-inline text-center footer-links">
+            <li class="list-inline-item">
+              <a href="mailto:asvoice@kakao.com" title="Email me">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-envelope social-icon fa-stack-1x"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/asvoice" title="GitHub">
+                <span class="fa-stack fa-
