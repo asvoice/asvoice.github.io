@@ -1124,3 +1124,20 @@ pre {
     display: inline-block;
   }
 }
+/* --- 여기서부터 다크모드 추가 --- */
+body {
+    background-color: #222222 !important;
+    color: #eeeeee !important;
+}
+.navbar-custom, nav.navbar {
+    background-color: #111111 !important;
+    border-bottom: 1px solid #444 !important;
+}
+h1, h2, h3, h4, h5, h6, p, li, a {
+    color: #eeeeee !important;
+}
+.intro-header .site-heading, .intro-header .post-heading, .intro-header .page-heading {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px #000000;
+}
+/* --- 여기까지 --- */
