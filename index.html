@@ -126,14 +126,40 @@
     <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
 
 <!-- SERVERS BEGIN -->
-    <div class="where">
-<div><a href="https://www.instagram.com/rush_eging_team/"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/rush.png" alt="Rush Team" /><br />Rush Team</a></div>
-<div><a href="https://www.instagram.com/big_angler_seok/"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/big2.png" alt="Rush Team" /><br />big_angler</a></div>
-      <div><a href="https://www.instagram.com/big_angler_seok/"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/big2.png" alt="Rush Team" /><br />big_angler</a></div>
-         </div>
-       
-      
-         
+    <style>
+  .where {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important; /* 높낮이 일치 */
+    gap: 50px !important;
+    padding: 30px 0 !important;
+  }
+
+  .where div {
+    width: 200px !important; /* 박스 크기 고정 */
+    text-align: center !important;
+  }
+
+  .where img {
+    /* 테마가 크기를 줄이지 못하도록 강제 고정 */
+    width: 200px !important; 
+    height: 200px !important;
+    min-width: 200px !important;
+    min-height: 200px !important;
+    object-fit: contain !important; /* 비율 유지하며 채움 */
+    border-radius: 50% !important;
+    display: block !important;
+    margin: 0 auto 10px !important;
+  }
+
+  .where a {
+    display: inline-block !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    border-bottom: 5px solid #f9d923 !important; /* 노란 밑줄 */
+    padding-bottom: 2px !important;
+  }
+</style>
 <!-- SERVERS END -->
     <p>
         Want your community to be featured here as well? Please contact me at <a href="mailto:spellbot@lexicalunit.com">spellbot@lexicalunit.com</a>!
