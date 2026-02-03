@@ -130,27 +130,26 @@
   .custom-profile-section {
     display: flex;
     justify-content: center;
-    gap: 40px; /* 두 이미지 사이 간격 */
+    gap: 40px;
     padding: 20px 0;
     text-align: center;
   }
   .profile-item img {
-    width: 180px !important;  /* 크기 고정 */
-    height: 180px !important; /* 크기 고정 */
-    object-fit: cover;        /* 비율 유지하며 채움 */
-    border-radius: 50%;       /* 완벽한 원형 */
-    border: 2px solid #eee;   /* 테두리 (선택사항) */
+    width: 180px !important;
+    height: 180px !important;
+    object-fit: cover;
+    border-radius: 50%;
     display: block;
     margin: 0 auto 10px;
     transition: transform 0.3s;
   }
   .profile-item img:hover {
-    transform: scale(1.05);   /* 마우스 올리면 살짝 커지는 효과 */
+    transform: scale(1.05);
   }
+  /* 노란색 포인트를 살리기 위해 기존 테마의 a 태그 스타일을 유지합니다 */
   .profile-item a {
-    text-decoration: none !important;
     font-weight: bold;
-    color: #333 !important;
+    display: inline-block;
   }
 </style>
 
