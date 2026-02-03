@@ -126,13 +126,49 @@
     <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
 
 <!-- SERVERS BEGIN -->
-    <div class="where">
-        <div><a href="https://www.instagram.com/rush_eging_team/"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/rush.png" alt="Rush Team" /><br />Rush Team</a></div>
-         <div><a href="https://www.instagram.com/big_angler_seok/"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/big2.png" alt="Rush Team" /><br />big_angler</a></div>
-         </div>
-       
-      
-         
+<style>
+  .custom-profile-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* 두 이미지 사이 간격 */
+    padding: 20px 0;
+    text-align: center;
+  }
+  .profile-item img {
+    width: 180px !important;  /* 크기 고정 */
+    height: 180px !important; /* 크기 고정 */
+    object-fit: cover;        /* 비율 유지하며 채움 */
+    border-radius: 50%;       /* 완벽한 원형 */
+    border: 2px solid #eee;   /* 테두리 (선택사항) */
+    display: block;
+    margin: 0 auto 10px;
+    transition: transform 0.3s;
+  }
+  .profile-item img:hover {
+    transform: scale(1.05);   /* 마우스 올리면 살짝 커지는 효과 */
+  }
+  .profile-item a {
+    text-decoration: none !important;
+    font-weight: bold;
+    color: #333 !important;
+  }
+</style>
+
+<div class="custom-profile-section">
+  <div class="profile-item">
+    <a href="https://www.instagram.com/rush_eging_team/" target="_blank">
+      <img src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/rush.png" alt="Rush Team">
+      Rush Team
+    </a>
+  </div>
+
+  <div class="profile-item">
+    <a href="https://www.instagram.com/big_angler_seok/" target="_blank">
+      <img src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/big2.png" alt="big_angler">
+      big_angler
+    </a>
+  </div>
+</div>
 <!-- SERVERS END -->
     <p>
         Want your community to be featured here as well? Please contact me at <a href="mailto:spellbot@lexicalunit.com">spellbot@lexicalunit.com</a>!
