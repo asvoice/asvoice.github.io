@@ -127,82 +127,71 @@
 
 <!-- SERVERS BEGIN -->
 <style>
-  /* 클래스명을 고유하게 지정하여 테마 간섭 방지 */
-  .profile-wrapper {
+  .as-profile-container {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 50px !important;
+    gap: 40px !important;
     padding: 40px 0 !important;
     text-align: center !important;
+    flex-wrap: wrap !important;
   }
   
-  .profile-box {
-    width: 200px !important;
+  .as-profile-item {
+    width: 220px !important;
+    margin-bottom: 20px !important;
   }
 
-  .profile-box img {
-    /* 이미지 크기를 강제로 고정 */
+  .as-profile-item img {
     width: 200px !important;
     height: 200px !important;
-    max-width: 200px !important; /* 테마의 자동 축소 방지 */
+    max-width: 200px !important;
     object-fit: cover !important;
     border-radius: 50% !important;
     display: block !important;
     margin: 0 auto 15px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
-  /* 여백이 있는 오른쪽 이미지만 시각적으로 크게 보정 */
-  .profile-box:last-child img {
-    transform: scale(1.18) !important; 
+  /* 오른쪽 이미지(big2.png)가 여백 때문에 작아 보이는 현상 보정 */
+  .as-profile-item:last-child img {
+    transform: scale(1.15) !important;
   }
 
-  /* 글자 강조 효과 (노란색 밑줄) 강제 적용 */
-  .profile-box a {
-    font-weight: 800 !important;
+  /* 노란색 포인트 밑줄 */
+  .as-profile-item a {
+    font-weight: bold !important;
+    font-size: 1.1em !important;
     text-decoration: none !important;
     color: #333 !important;
-    border-bottom: 5px solid #f9d923 !important; /* 노란색 강조 두껍게 */
+    border-bottom: 6px solid #f9d923 !important; /* 노란색 두껍게 */
     padding-bottom: 2px !important;
-    font-size: 1.1em !important;
     display: inline-block !important;
   }
 
-  /* 모바일에서 이미지가 겹치지 않게 정렬 */
+  .as-profile-item a:hover {
+    color: #000 !important;
+    border-bottom-color: #ffd400 !important;
+  }
+
+  /* 모바일 대응 */
   @media (max-width: 600px) {
-    .profile-wrapper {
+    .as-profile-container {
       flex-direction: column !important;
       gap: 60px !important;
     }
   }
 </style>
 
-<div class="profile-wrapper">
-  <div class="profile-box">
+<div class="as-profile-container">
+  <div class="as-profile-item">
     <a href="https://www.instagram.com/rush_eging_team/" target="_blank">
       <img src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/rush.png" alt="Rush Team">
       Rush Team
     </a>
   </div>
 
-  <div class="profile-box">
-    <a href="https://www.instagram.com/big_angler_seok/" target="_blank">
-      <img src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/big2.png" alt="big_angler">
-      big_angler
-    </a>
-  </div>
-</div>
-</style>
-
-<div class="custom-profile-section">
-  <div class="profile-item">
-    <a href="https://www.instagram.com/rush_eging_team/" target="_blank">
-      <img src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/rush.png" alt="Rush Team">
-      Rush Team
-    </a>
-  </div>
-
-  <div class="profile-item">
+  <div class="as-profile-item">
     <a href="https://www.instagram.com/big_angler_seok/" target="_blank">
       <img src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/big2.png" alt="big_angler">
       big_angler
