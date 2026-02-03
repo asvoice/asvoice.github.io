@@ -126,40 +126,59 @@
     <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
 
 <!-- SERVERS BEGIN -->
-    <style>
+ <style>
   .where {
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important; /* 높낮이 일치 */
+    align-items: center !important;
     gap: 50px !important;
     padding: 30px 0 !important;
   }
 
   .where div {
-    width: 200px !important; /* 박스 크기 고정 */
+    width: 200px !important;
     text-align: center !important;
   }
 
   .where img {
-    /* 테마가 크기를 줄이지 못하도록 강제 고정 */
     width: 200px !important; 
     height: 200px !important;
-    min-width: 200px !important;
-    min-height: 200px !important;
-    object-fit: contain !important; /* 비율 유지하며 채움 */
+    object-fit: contain !important; 
+    background-color: transparent !important; /* 배경 투명 */
     border-radius: 50% !important;
     display: block !important;
     margin: 0 auto 10px !important;
+    transition: transform 0.2s;
+  }
+
+  .where a:hover img {
+    transform: translateY(-5px);
   }
 
   .where a {
     display: inline-block !important;
     text-decoration: none !important;
     font-weight: bold !important;
-    border-bottom: 5px solid #f9d923 !important; /* 노란 밑줄 */
+    color: white !important;
+    border-bottom: 5px solid #f9d923 !important;
     padding-bottom: 2px !important;
   }
 </style>
+
+<div class="where">
+    <div>
+        <a href="https://www.instagram.com/rush_eging_team/" target="_blank">
+            <img src="/assets/img/rush.png" alt="Rush Team">
+            Rush Team
+        </a>
+    </div>
+    <div>
+        <a href="https://www.instagram.com/big_angler_seok/" target="_blank">
+            <img src="/assets/img/big2.png" alt="big_angler">
+            big_angler
+        </a>
+    </div>
+</div>
 <!-- SERVERS END -->
     <p>
         Want your community to be featured here as well? Please contact me at <a href="mailto:spellbot@lexicalunit.com">spellbot@lexicalunit.com</a>!
