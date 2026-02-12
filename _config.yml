@@ -4,7 +4,7 @@
 # baseurl is the website's URL without the hostname
 
 # If you are building a simple GitHub user page (http://username.github.io) then use these settings:
-url: "http://rls1004.github.io"
+url: "https://asvoice.github.io/"
 baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
@@ -14,10 +14,10 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: rls1004
+title: Rush Eging Team
 
 # Short description of your site
-description: system hacker
+description: Squid and Code.
 
 # --- Navigation bar options --- #
 
@@ -25,8 +25,10 @@ description: system hacker
 navbar-links:
   Home:
   About Me: "aboutme"
+  Eging  
+  Other
   Tags: "tags"
-  Resources:
+
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -70,21 +72,21 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: true
-  email: "98nba@naver.com"
-  facebook: rls1004
-  github: rls1004
-#  twitter: daattali
+  email: "winelf@naver.com"
+  facebook: asvoice
+  github: asvoice
+#  twitter: 
 #  reddit: yourname
-#  google-plus: +DeanAttali
+#  google-plus: 
 #  linkedin: daattali
 #  xing: yourname
-#  stackoverflow: "3943160/daattali"
+#  stackoverflow: 
 #  snapchat: deanat78
-  instagram: root1004
-#  youtube: user/deanat78
+  instagram: asvoice
+#  youtube: 
 #  spotify: yourname
-#  telephone: +14159998888
-#  steam: deanat78
+#  telephone: 
+#  steam: 
 #  twitch: yourname
 #  yelp: yourname
 
