@@ -1,76 +1,297 @@
----
-layout: page
-title: Rush Eging Team
-subtitle: Squid and Code.
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Rush Team</title>
+  <meta name="author" content="Amy Troschinetz">
+  <meta name="description" content="The Discord bot for Webcam Magic">
+  <meta name="theme-color" content="#5A3EFD">
+  <meta name="keywords" content="magic: the gathering, magic, mtg, edh, commander, spelltable, discord bot, discord, bot">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+  <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+  <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+  <link rel="stylesheet" href="/assets/css/spellbot.css">
 
-<style>
-  .where {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
-    text-align: center;
-    padding: 20px 0;
-  }
-  .where > div {
-    width: 200px;
-    transition: transform 0.3s;
-  }
-  .where > div:hover {
-    transform: scale(1.05);
-  }
-  .where img {
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    margin-bottom: 10px;
-    object-fit: cover;
-  }
-  .where a {
-    text-decoration: none;
-    color: #ffffff !important;
-    font-weight: bold;
-    font-size: 0.95rem;
-  }
-  .small {
-    font-size: 0.85em;
-    color: #bdc3c7;
-  }
-  #typed-wrap {
-    text-align: center;
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 30px;
-  }
-  #typed {
-    color: #ff4d4d; /* 강조색 빨간색 */
-    font-weight: bold;
-  }
-</style>
+  <!-- 중앙 정렬용 CSS -->
+  <style>
+    .typed-wrapper {
+      font-size: 2rem;       /* 글씨 크기 */
+      display: block;        /* span을 블록처럼 만들어 text-align 적용 */
+      text-align: center;    /* 중앙 정렬 */
+      margin-top: 1rem;      /* 위쪽 여백 */
+    }
+    #typed {
+      color: red;            /* 빨간 글씨 */
+    }
+  </style>
+</head>
 
-<div id="typed-wrap">
-  <h3>My Favorite Things <span id="typed"></span></h3>
-</div>
+<body style="background-color: #1a202c; color: white;">
 
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular">
+    <a class="navbar-brand" href="/">Eging Again</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://spelltable.wizards.com/">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.patreon.com/lexicalunit">Patreon</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/lexicalunit/spellbot">Dev</a></li>
+      </ul>
+    </div>
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="/"><img alt="Avatar" class="avatar-img" src="/assets/img/r2.png" /></a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header-section">
+    <div class="intro-header">
+      <div class="container-md">
+        <div class="row">
+          <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+            <div class="page-heading" style="text-align: center;">
+              <h1 style="font-size: clamp(2rem, 7vw, 4rem); white-space: nowrap;">Rush Eging Team</h1>
+              <hr class="small">
+              <span class="page-subheading">Squid and Code.</span>
+            </div>
+            <!-- 중앙 정렬된 I write about + 빨간 Typed 글씨 -->
+            <span class="page-subheading typed-wrapper">
+             <h3>My Favorite Things <span id="typed"></span> </h3>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<body>
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="https://asvoice.github.io/">Rush Team</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://asvoice.github.io/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://asvoice.github.io/">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://asvoice.github.io/">Eging</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/members">MembErs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://asvoice.github.io/">Other</a>
+          </li></ul>
+  </div>
+
+  
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="https://asvoice.github.io/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/r2.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+
+
+
+  
+
+
+
+
+<main class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+<!-- SERVERS BEGIN -->
 <div class="where">
-  <div><a href="https://www.instagram.com/rush_eging_team/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/r.PNG" alt="Rush Team"><br>Rush Team</a></div>
+  <div><a href="https://www.instagram.com/rush_eging_team/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/r.PNG" alt="PlayEDH" /><br />Rush Team</a></div>
+
+  <div><a href="https://www.instagram.com/be_a_simpleman/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/1.PNG" alt="Tolarian Community College" /><br /><span class="small">be_a_simpleman</span></a></div>
+
+  <div><a href="https://www.instagram.com/sd179_6/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/2.PNG" alt="Tolarian Community College" /><br /><span class="small">sd179_6</span></a></div>
+
+ <div><a href="https://www.instagram.com/p/DNLWWXBzyP-/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/3.PNG" alt="Tolarian Community College" /><br /><span class="small">bong_dari__</span></a></div>
   
-  <div><a href="https://www.instagram.com/be_a_simpleman/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/1.PNG" alt="be_a_simpleman"><br><span class="small">be_a_simpleman</span></a></div>
+  <div><a href="https://www.instagram.com/big_angler_seok/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/big3.PNG" alt="Tolarian Community College" /><br /><span class="small">big_angler</span></a></div>
+
+    <div><a href="https://www.instagram.com/whaaat_sap/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/5.PNG" alt="Tolarian Community College" /><br /><span class="small">whaaat_sap</span></a></div>
+
+<div><a href="https://www.instagram.com/13readen.miyeok/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/6.PNG" alt="Tolarian Community College" /><br /><span class="small">13readen.miyeok </span></a></div>
+
+  <div><a href="https://www.instagram.com/rush_eging_team/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/7.PNG" alt="Tolarian Community College" /><br /><span class="small">Time</span></a></div>
+
+  <div><a href="https://www.instagram.com/khyo4851/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/8.PNG" alt="Tolarian Community College" /><br /><span class="small">khyo4851</span></a></div>
+
+  <div><a href="https://www.instagram.com/maestro_bong/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/9.PNG" alt="Tolarian Community College" /><br /><span class="small">maestro_bong</span></a></div>
+
+  <div><a href="https://www.instagram.com/henry_.0321/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/10.PNG" alt="Tolarian Community College" /><br /><span class="small">henry_.0321</span></a></div>
+
+  <div><a href="https://www.instagram.com/toto_lightgame/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/11.PNG" alt="Tolarian Community College" /><br /><span class="small">toto_lightgame</span></a></div>
+
+  <div><a href="https://www.instagram.com/unifishing/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/12.PNG" alt="Tolarian Community College" /><br /><span class="small">unifishing</span></a></div>
+
+  <div><a href="https://www.instagram.com/hooni_hoon/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/13.PNG" alt="Tolarian Community College" /><br /><span class="small">hooni_hoon</span></a></div>
+
+  <div><a href="https://www.instagram.com/1____kyung/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/14.PNG" alt="Tolarian Community College" /><br /><span class="small">1____kyung</span></a></div>
+
+  <div><a href="https://asvoice.github.io/" target="_blank" rel="noopener"><img width="200" height="200" src="https://github.com/lexicalunit/spellbot/assets/1903876/32c324a3-b060-4bd2-8d8a-a72799acc0ff" alt="대구 또또" /><br />대구 또또</a></div>
+
+  <div><a href="https://asvoice.github.io/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/come.png" alt="The Commander Staple" /><br /><span class="small">Come on</span></a></div>
+
+  <div><a href="https://asvoice.github.io/" target="_blank" rel="noopener"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/come.png" alt="Command the Cause" /><br />Come on</a></div>
+
+
+
+ 
+
+ 
+
+ 
+</div>
+<!-- SERVERS END -->
+    <p>
+        Want your community to be featured here as well? Please contact me at <a href="mailto:spellbot@lexicalunit.com">spellbot@lexicalunit.com</a>!
+    </p>
+<section id="fine-print" class="level2">
+    <h2>🔍 Join-Rush Team</h2>
+    <p>Join my crew . <code>/message to instagram</code>   </p>
+    <p align="center">
+        <img
+            class="screenshot"
+            src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/insta.PNG"
+            width="617"
+            alt="Rush Team"
+        />
+    </p>
+
+<hr class="small">
+
+
+
+
+<!-- role="list" needed so that `list-style: none` i
+      n Safari doesn't remove the list semantics -->
+<ul class="posts-list list-unstyled" role="list">
   
-  <div><a href="https://www.instagram.com/sd179_6/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/2.PNG" alt="sd179_6"><br><span class="small">sd179_6</span></a></div>
+</ul>
+
+
+
+
+      
+
+      
+
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+
+
+      
+      <p class="copyright text-muted">
+      
+        Daegu Agagin
+        &nbsp;&bull;&nbsp;
+      
+      2026
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://asvoice.github.io/">asvoice.io</a>
+        </span>
+      
+
+      
+
+      
+
+      </p>
+      <p class="theme-by text-muted">
+        Design by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
   
-  <div><a href="https://www.instagram.com/p/DNLWWXBzyP-/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/3.PNG" alt="bong_dari__"><br><span class="small">bong_dari__</span></a></div>
   
-  <div><a href="https://www.instagram.com/big_angler_seok/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/big3.PNG" alt="big_angler"><br><span class="small">big_angler</span></a></div>
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
   
-  <div><a href="https://www.instagram.com/whaaat_sap/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/5.PNG" alt="whaaat_sap"><br><span class="small">whaaat_sap</span></a></div>
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
   
-  <div><a href="https://www.instagram.com/13readen.miyeok/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/6.PNG" alt="13readen.miyeok"><br><span class="small">13readen.miyeok</span></a></div>
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
   
-  <div><a href="https://www.instagram.com/rush_eging_team/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/7.PNG" alt="Time"><br><span class="small">Time</span></a></div>
+
+
+
   
-  <div><a href="https://www.instagram.com/khyo4851/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/8.PNG" alt="khyo4851"><br><span class="small">khyo4851</span></a></div>
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
   
-  <div><a href="https://www.instagram.com/maestro_bong/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/9.PNG" alt="maestro_bong"><br><span class="small">maestro_bong</span></a></div>
+
+
+
   
-  <div><a href="https://www.instagram.com/henry_.0321/" target="_blank"><img width="200" height="200" src="https://raw.githubusercontent.com/asvoice/asvoice.github.io/refs/heads/main/assets/img/10.PNG" alt="henry_.0321"><br><span class="small">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Typed("#typed", {
+        strings: ["Fishing.", "Squid Game.", "Daiwa", "Shimano"],
+        typeSpeed: 70,
+        backSpeed: 40,
+        backDelay: 1500,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|"
+      });
+    });
+  </script>
+</body>
+</html>
